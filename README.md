@@ -1,6 +1,4 @@
-# docker-joomlagovbr
-Portal padrão rm CMS Joomla 3.7.4 rodando com docker
-Portal padrão em CMS Joomla 3.7.4
+Portal padrão em CMS Joomla 3.7.4, rodando com docker
 ================
 
 Sobre esta versão

@@ -1,5 +1,5 @@
 # docker-joomlagovbr
-Joomla do padrão do governo federal rodando com docker
+Portal padrão rm CMS Joomla 3.7.4 rodando com docker
 Portal padrão em CMS Joomla 3.7.4
 ================
 

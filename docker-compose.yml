@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    container_name: web
+    restart: always
+    volumes:
+      - /var/lib/docker/volumes/_data/site:/var/share/nginx/html
+    ports:
+      - "8080:80"
+  db:
+    image: mariadb
+    container_name: joomla_db
+    restart: always
+    volumes:
+      - /var/lib/docker/volumes/_data/sitedb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: dbgov
+      MYSQL_USER: dbgov
+      MYSQL_PASSWORD: 'dbgovpasswd'
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: joomla_phpmyadmin
+    restart: always
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=joomla_db
+    ports:
+      - 8181:80
+    depends_on:
+      - db
+

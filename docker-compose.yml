@@ -16,7 +16,7 @@ services:
       - "3306:3306"
 
   php-fpm:
-    build: ./php-fpm
+    image: agnaldoneto/fpm-php7
     container_name: php-fpm
     restart: always
     ports:
